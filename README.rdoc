@@ -18,9 +18,9 @@ http://oauth.net
 
 There are several changes to the latest OAuth 2.0 spec which requires a couple of changes to 2 models which you are REQUIRED to update manually if you are supporting OAuth2.
 
-https://github.com/pelle/oauth-plugin/blob/master/lib/generators/active_record/oauth_provider_templates/oauth2_token.rb
+https://github.com/pelle/oauth-plugin/blob/master/lib/generators/active_record/oauth_provider_templates/oauth2_provider_token.rb
 
-  class Oauth2Token < AccessToken
+  class Oauth2ProviderToken < AccessToken
     attr_accessor :state
     def as_json(options={})
       d = {:access_token=>token, :token_type => 'bearer'}
@@ -50,7 +50,7 @@ https://github.com/pelle/oauth-plugin/blob/master/lib/generators/active_record/o
 
     def exchange!(params={})
       OauthToken.transaction do
-        token = Oauth2Token.create! :user=>user,:client_application=>client_application, :scope => scope
+        token = Oauth2ProviderToken.create! :user=>user,:client_application=>client_application, :scope => scope
         invalidate!
         token
       end

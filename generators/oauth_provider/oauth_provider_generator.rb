@@ -43,7 +43,7 @@ class OauthProviderGenerator < Rails::Generator::Base
       m.template 'oauth_token.rb',    File.join('app/models',"oauth_token.rb")
       m.template 'request_token.rb',  File.join('app/models',"request_token.rb")
       m.template 'access_token.rb',   File.join('app/models',"access_token.rb")
-      m.template 'oauth2_token.rb',    File.join('app/models',"oauth2_token.rb")
+      m.template 'oauth2_provider_token.rb',    File.join('app/models',"oauth2_provider_token.rb")
       m.template 'oauth2_verifier.rb',    File.join('app/models',"oauth2_verifier.rb")
       m.template 'oauth_nonce.rb',    File.join('app/models',"oauth_nonce.rb")
 

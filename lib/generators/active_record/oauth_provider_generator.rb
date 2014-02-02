@@ -26,7 +26,7 @@ module ActiveRecord
         template 'oauth_token.rb',        File.join('app/models', 'oauth_token.rb')
         template 'request_token.rb',      File.join('app/models', 'request_token.rb')
         template 'access_token.rb',       File.join('app/models', 'access_token.rb')
-        template 'oauth2_token.rb',       File.join('app/models', 'oauth2_token.rb')
+        template 'oauth2_provider_token.rb',       File.join('app/models', 'oauth2_provider_token.rb')
         template 'oauth2_verifier.rb',    File.join('app/models', 'oauth2_verifier.rb')
         template 'oauth_nonce.rb',        File.join('app/models', 'oauth_nonce.rb')
       end
