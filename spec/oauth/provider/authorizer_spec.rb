@@ -109,7 +109,7 @@ describe OAuth::Provider::Authorizer do
       end
 
       it "should allow" do
-        ::Oauth2Token.should_receive(:create!).with( :client_application=>@app,
+        ::Oauth2providerToken.should_receive(:create!).with( :client_application=>@app,
                                                   :user=>@user,
                                                   :callback_url=>'http://mysite.com/callback',
                                                   :scope => 'a b').and_return(@token)
@@ -125,7 +125,7 @@ describe OAuth::Provider::Authorizer do
       end
 
       it "should include state" do
-        ::Oauth2Token.should_receive(:create!).with( :client_application=>@app,
+        ::Oauth2ProviderToken.should_receive(:create!).with( :client_application=>@app,
                                                   :user=>@user,
                                                   :callback_url=>'http://mysite.com/callback',
                                                   :scope => 'a b').and_return(@token)
@@ -142,7 +142,7 @@ describe OAuth::Provider::Authorizer do
       end
 
       it "should allow query string in callback" do
-        ::Oauth2Token.should_receive(:create!).with( :client_application=>@app,
+        ::Oauth2ProviderToken.should_receive(:create!).with( :client_application=>@app,
                                                   :user=>@user,
                                                   :callback_url=>'http://mysite.com/callback?this=one',
                                                   :scope => 'a b').and_return(@token)

@@ -40,7 +40,7 @@ class OauthToken
   end
 end
 
-class Oauth2Token < OauthToken ; end
+class Oauth2ProviderToken < OauthToken ; end
 class Oauth2Verifier < OauthToken ; end
 class AccessToken < OauthToken ; end
 class RequestToken < OauthToken ; end

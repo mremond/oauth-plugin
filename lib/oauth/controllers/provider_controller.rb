@@ -152,7 +152,7 @@ module OAuth
           oauth2_error
           return
         end
-        @token = Oauth2Token.create :client_application=>@client_application, :user=>@user, :scope=>params[:scope]
+        @token = Oauth2ProviderToken.create :client_application=>@client_application, :user=>@user, :scope=>params[:scope]
         render :json=>@token
       end
 
@@ -163,7 +163,7 @@ module OAuth
 
       # autonomous authorization which creates a token for client_applications user
       def oauth2_token_client_credentials
-        @token = Oauth2Token.create :client_application=>@client_application, :user=>@client_application.user, :scope=>params[:scope]
+        @token = Oauth2ProviderToken.create :client_application=>@client_application, :user=>@client_application.user, :scope=>params[:scope]
         render :json=>@token
       end
 

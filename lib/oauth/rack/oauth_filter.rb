@@ -24,7 +24,7 @@ module OAuth
         env["oauth_plugin"] = true
         strategies = []
         if token_string = oauth2_token(request)
-          if token = Oauth2Token.where('invalidated_at IS NULL and authorized_at IS NOT NULL and token = ?', token_string).first
+          if token = Oauth2ProviderToken.where('invalidated_at IS NULL and authorized_at IS NOT NULL and token = ?', token_string).first
             env["oauth.token"]   = token
             env["oauth.version"] = 2
             strategies << :oauth20_token
