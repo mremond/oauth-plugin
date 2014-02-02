@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.homepage = %q{http://github.com/pelle/oauth-plugin}
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{oauth}
+  s.rubyforge_project = %q{oauth-plugin}
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Ruby on Rails Plugin for OAuth Provider and Consumer}
   s.add_development_dependency "opentransact"
@@ -33,8 +33,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rack-test"
 
   s.add_dependency "multi_json"
-  s.add_dependency("oauth", "~> 0.4.4")
-  s.add_dependency("rack")
-  s.add_dependency("oauth2", '>= 0.5.0')
+  s.add_dependency "oauth", ">= 0.4.4"
+  s.add_dependency "rack"
+  s.add_dependency "oauth2", '>= 0.5.0'
 end
 
