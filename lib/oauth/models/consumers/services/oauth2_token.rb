@@ -1,6 +1,6 @@
 require 'oauth2'
 class Oauth2Token < ConsumerToken
-  after_initialize :ensure_access, if: :expired_and_existing?
+  after_initialize :ensure_access, :if => :expired_and_existing?
 
   def self.consumer
     @consumer||=create_consumer
@@ -22,7 +22,7 @@ class Oauth2Token < ConsumerToken
   end
 
   def client
-    @client ||= OAuth2::AccessToken.new self.class.consumer, token, {refresh_token: refresh_token, expires_at: expires_at, expires_in: expires_in }
+    @client ||= OAuth2::AccessToken.new self.class.consumer, token, {:refresh_token => refresh_token, :expires_at => expires_at, :expires_in => expires_in }
   end
 
   # @return [Boolean] Is the access token expired and does the record exist in the datastore?
