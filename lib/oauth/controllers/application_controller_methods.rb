@@ -46,6 +46,7 @@ module OAuth
           elsif !(@strategies & env["oauth.strategies"].to_a).empty?
             if token.present?
               @controller.send :current_user=, token.user
+              @controller.send :client_application=, token.client_application
               true
             else
               false
