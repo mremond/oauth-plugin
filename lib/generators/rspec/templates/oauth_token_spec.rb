@@ -232,7 +232,7 @@ describe RequestToken do
     end
   end
 
-  if defined? OAUTH_10_SUPPORT && OAUTH_10_SUPPORT
+  if ( defined? OAUTH_10_SUPPORT ) && OAUTH_10_SUPPORT
     describe "OAuth 1.0" do
 
       it "should be oauth10" do
