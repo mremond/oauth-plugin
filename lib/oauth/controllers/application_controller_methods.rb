@@ -127,7 +127,11 @@ module OAuth
       end
 
       def invalid_oauth_response(code=401,message="Invalid OAuth Request")
-        render :text => message, :status => code
+        respond_to do |format|
+          format.html { render :text => message, :status => code }
+          format.js   { render :json => {:error => [{:message => message}]}, :status => code }
+          format.text { render :text => message, :status => code }
+        end
         false
       end
 
